@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1134F4631D204C68002D5D91 /* PhotoTakingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1134F4621D204C68002D5D91 /* PhotoTakingHelper.swift */; };
+		117716E21D2195F500D4AE3B /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117716E11D2195F500D4AE3B /* Post.swift */; };
 		1186BF001D1DEBA30090E541 /* TimelineVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1186BEFF1D1DEBA30090E541 /* TimelineVC.swift */; };
 		1186BF041D1DEBFB0090E541 /* FriendSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1186BF031D1DEBFB0090E541 /* FriendSearchVC.swift */; };
 		1186BF061D1DEC280090E541 /* PhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1186BF051D1DEC280090E541 /* PhotoVC.swift */; };
@@ -63,6 +64,7 @@
 
 /* Begin PBXFileReference section */
 		1134F4621D204C68002D5D91 /* PhotoTakingHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoTakingHelper.swift; sourceTree = "<group>"; };
+		117716E11D2195F500D4AE3B /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		1186BEFF1D1DEBA30090E541 /* TimelineVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineVC.swift; sourceTree = "<group>"; };
 		1186BF031D1DEBFB0090E541 /* FriendSearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendSearchVC.swift; sourceTree = "<group>"; };
 		1186BF051D1DEC280090E541 /* PhotoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoVC.swift; sourceTree = "<group>"; };
@@ -133,6 +135,14 @@
 				1134F4621D204C68002D5D91 /* PhotoTakingHelper.swift */,
 			);
 			path = PhotoTaking;
+			sourceTree = "<group>";
+		};
+		117716E01D2195DC00D4AE3B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				117716E11D2195F500D4AE3B /* Post.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		62551B621B06BF33000913E4 /* Frameworks */ = {
@@ -218,6 +228,7 @@
 		62C8C1E21B06BD6500DC3EA7 /* Makestagram */ = {
 			isa = PBXGroup;
 			children = (
+				117716E01D2195DC00D4AE3B /* Model */,
 				1134F4611D204C1C002D5D91 /* PhotoTaking */,
 				6277189C1B0A58E800AF5C6E /* Helpers */,
 				627718811B0A581600AF5C6E /* ViewControllers */,
@@ -426,6 +437,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1186BF001D1DEBA30090E541 /* TimelineVC.swift in Sources */,
+				117716E21D2195F500D4AE3B /* Post.swift in Sources */,
 				627718901B0A581600AF5C6E /* Filter.swift in Sources */,
 				627718A01B0A58E800AF5C6E /* ParseLoginHelper.swift in Sources */,
 				627718911B0A581700AF5C6E /* FilterCollectionViewCell.swift in Sources */,
