@@ -44,6 +44,21 @@ class TimelineVC: UIViewController {
         
             self.posts = result as? [Post] ?? []
             
+            for post in self.posts {
+                
+                do {
+                    
+                    let data = try post.imageFile?.getData()
+                    
+                    post.img = UIImage(data: data!, scale: 0.8)
+                    
+                } catch {
+                    print("could not get the image")
+                }
+                
+                
+            }
+            
             self.tableView.reloadData()
         }
     }
@@ -85,9 +100,11 @@ extension TimelineVC: UITableViewDataSource {
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("PostCell") as UITableViewCell!
+        let cell = tableView.dequeueReusableCellWithIdentifier("PostCell") as! PostTableViewCell
         
         cell.textLabel?.text = "Random Post"
+        
+        cell.postImageView.image = posts[indexPath.row].img
         
         return cell
     }
