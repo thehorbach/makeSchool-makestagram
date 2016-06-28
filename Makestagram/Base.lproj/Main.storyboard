@@ -58,11 +58,40 @@
                     <view key="view" contentMode="scaleToFill" id="DCh-tG-vuE">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3U4-W6-CPX">
+                                <rect key="frame" x="0.0" y="20" width="600" height="531"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" id="2DP-UH-AaQ">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2DP-UH-AaQ" id="XNP-WC-xm9">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="VKe-xt-3fY" id="j80-5K-1mS"/>
+                                    <outlet property="delegate" destination="VKe-xt-3fY" id="JhR-Ud-rFE"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="YmU-CK-FCQ" firstAttribute="top" secondItem="3U4-W6-CPX" secondAttribute="bottom" id="0HK-Aw-Ane"/>
+                            <constraint firstAttribute="trailing" secondItem="3U4-W6-CPX" secondAttribute="trailing" id="5OS-HX-IpZ"/>
+                            <constraint firstItem="3U4-W6-CPX" firstAttribute="top" secondItem="zaf-I8-WC3" secondAttribute="bottom" id="HAd-L3-3ov"/>
+                            <constraint firstItem="3U4-W6-CPX" firstAttribute="leading" secondItem="DCh-tG-vuE" secondAttribute="leading" id="Mkr-oJ-HwA"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="home" id="CiD-Ri-L7q">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="tableView" destination="3U4-W6-CPX" id="2MT-VD-0Ge"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j7c-E3-DEH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

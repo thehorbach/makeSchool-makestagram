@@ -32,7 +32,6 @@ class Post: PFObject, PFSubclassing {
             
             }
             
-            
             saveInBackgroundWithBlock() { (success: Bool, err: NSError?) in
                 
                 UIApplication.sharedApplication().endBackgroundTask(self.photoUploadTask!)
