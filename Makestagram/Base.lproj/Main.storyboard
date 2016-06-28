@@ -70,10 +70,16 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="319"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P6Y-4X-jfg">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P6Y-4X-jfg">
                                                     <rect key="frame" x="0.0" y="0.0" width="600" height="319"/>
                                                 </imageView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="P6Y-4X-jfg" secondAttribute="trailing" id="3fV-F0-WUp"/>
+                                                <constraint firstAttribute="bottom" secondItem="P6Y-4X-jfg" secondAttribute="bottom" id="Ejg-WR-umo"/>
+                                                <constraint firstItem="P6Y-4X-jfg" firstAttribute="top" secondItem="XNP-WC-xm9" secondAttribute="top" id="Ys9-4f-zAF"/>
+                                                <constraint firstItem="P6Y-4X-jfg" firstAttribute="leading" secondItem="XNP-WC-xm9" secondAttribute="leading" id="wI5-lZ-quS"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="postImageView" destination="P6Y-4X-jfg" id="zxs-V3-Vm7"/>

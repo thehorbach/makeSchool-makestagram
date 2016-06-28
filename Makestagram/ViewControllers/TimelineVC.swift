@@ -29,19 +29,6 @@ class TimelineVC: UIViewController {
             (result: [PFObject]?, err: NSError?) -> Void in
             self.posts = result as? [Post] ?? []
             
-            for post in self.posts {
-                do {
-                    
-                    let data = try post.imageFile?.getData()
-                    post.img = UIImage(data: data!, scale: 0.8)
-                    
-                } catch {
-                    
-                    print("Could not get the image")
-                    
-                }
-            }
-            
             self.tableView.reloadData()
             
         }
@@ -52,7 +39,7 @@ class TimelineVC: UIViewController {
         //intanitate photo taking class, provide callback for when photo is selected
         photoTakingHelper = PhotoTakingHelper(viewController: self.tabBarController!, callback: { (image: UIImage?) in
             let post = Post()
-            post.img = image
+            post.img.value = image
             post.uploadPost()
         })
     }
@@ -86,9 +73,13 @@ extension TimelineVC: UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("PostCell") as! PostTableViewCell
         
-        cell.textLabel?.text = "Random Post"
+  //      cell.textLabel?.text = "Random Post"
         
-        cell.postImageView.image = posts[indexPath.row].img
+        let post = posts[indexPath.row]
+        
+        post.downloadImage()
+        
+        cell.post = post
         
         return cell
     }
