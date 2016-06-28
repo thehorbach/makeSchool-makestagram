@@ -25,41 +25,25 @@ class TimelineVC: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        let followingQuery = PFQuery(className: "Follow")
-        followingQuery.whereKey("fromUser", equalTo: PFUser.currentUser()!)
-        
-        let postsFromFollowedUsers = Post.query()
-        postsFromFollowedUsers!.whereKey("users", matchesKey: "toUser", inQuery: followingQuery)
-        
-        let postsFromThisUser = Post.query()
-        postsFromThisUser?.whereKey("user", equalTo: PFUser.currentUser()!)
-        
-        let query = PFQuery.orQueryWithSubqueries([postsFromFollowedUsers!, postsFromThisUser!])
-        
-        query.includeKey("user")
-        
-        query.orderByDescending("createdAt")
-        
-        query.findObjectsInBackgroundWithBlock {(result: [PFObject]?, err: NSError?)  -> Void in
-        
+        ParseHelper.timelineRequestForCurrentUser {
+            (result: [PFObject]?, err: NSError?) -> Void in
             self.posts = result as? [Post] ?? []
             
             for post in self.posts {
-                
                 do {
                     
                     let data = try post.imageFile?.getData()
-                    
                     post.img = UIImage(data: data!, scale: 0.8)
                     
                 } catch {
-                    print("could not get the image")
+                    
+                    print("Could not get the image")
+                    
                 }
-                
-                
             }
             
             self.tableView.reloadData()
+            
         }
     }
     
